@@ -12,8 +12,8 @@
 // Input: 14
 // Output: false
 // ------------------------------------------------------------------------------- //
-        // method 1
-        // brute force with complexity O(n/2)
+    // method 1
+    // brute force with complexity O(n/2)
         
         // if(num==1)
         //     return true;
@@ -23,16 +23,16 @@
         // }
         // return false;
         
-        // method 2
-        // brute force with complexity O(sqrt(n))
+    // method 2
+    // brute force with complexity O(sqrt(n))
         
         // for (int i = 0; (int64_t)i * i <= num; ++i) {
         //     if (i * i == num) return true;
         // }
         // return false;
         
-        // method 3 Newton Iteration which runs at constant time
-        // it uses derivative function like f'(x) of f(x) 
+    // method 3 Newton Iteration which runs at constant time
+    // it uses derivative function like f'(x) of f(x) 
         // f(x) = x^2, f'(x) = 2x
         
         // if (num < 1) 
