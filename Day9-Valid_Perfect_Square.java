@@ -52,7 +52,7 @@
         
         if(num < 0)
             return false;
-        if(num <= 1)
+        if(num == 1)
             return true;
         long lef = 2;
         long rig = 100000;
