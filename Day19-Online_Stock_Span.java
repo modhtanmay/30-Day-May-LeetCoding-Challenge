@@ -35,22 +35,31 @@ The total time limit for this problem has been reduced by 75% for C++, and 50% f
 */
 
 class StockSpanner {
-    Stack<Integer> prices, weights;
+    Stack<Integer> pri;
+    Stack<Integer> wei;
 
     public StockSpanner() {
-        prices = new Stack();
-        weights = new Stack();
+        pri = new Stack();
+        wei = new Stack();
     }
 
     public int next(int price) {
         int w = 1;
-        while (!prices.isEmpty() && prices.peek() <= price) {
-            prices.pop();
-            w += weights.pop();
+        while (!pri.isEmpty() && pri.peek() <= price) {
+            pri.pop();
+            w += wei.pop();
         }
 
-        prices.push(price);
-        weights.push(w);
+        pri.push(price);
+        wei.push(w);
         return w;
     }
 }
+
+// Complexity Analysis
+
+// Time Complexity: O(Q)O(Q), where QQ is the number of calls to StockSpanner.next. In total, 
+// there are QQ pushes to the stack, and at most QQ pops.
+
+// Space Complexity: O(Q)O(Q).
+
