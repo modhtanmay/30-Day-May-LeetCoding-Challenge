@@ -16,10 +16,13 @@ Follow up:
 It is very easy to come up with a solution with run time O(n*sizeof(integer)). But can you do it in linear time O(n) /possibly in a single pass?
 Space complexity should be O(n).
 Can you do it like a boss? Do it without using any builtin function like __builtin_popcount in c++ or in any other language.
+   
    Hide Hint #1  
 You should make use of what you have produced already.
+   
    Hide Hint #2  
 Divide the numbers in ranges like [2-3], [4-7], [8-15] and so on. And try to generate new range from previous.
+   
    Hide Hint #3  
 Or does the odd/even status of the number help you in calculating the number of 1s?
 */
@@ -28,12 +31,38 @@ class Solution {
     public int[] countBits(int num) {
         
         /*
-            Your Solution
+            Your Solution 
         */
         
         
     }
 }
 
+// Naive Solution
+/*
+class Solution {
+   public int[] countBits(int num) {
+       int[] result = new int[num+1];
+
+       for(int i=0; i<=num; i++){
+           result[i] = countEach(i);
+       }
+
+       return result;
+   }
+
+   public int countEach(int num){
+       int result = 0;
+
+       while(num!=0){
+           if(num%2==1){
+               result++;
+           }
+           num = num/2;
+       }
+       return result;
+   }
+}
+*/
 
 
